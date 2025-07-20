@@ -33,4 +33,19 @@ public static class SaveSystem
     {
         return Path.Combine(Application.persistentDataPath, fileName);
     }
+
+    public static void DeleteJournalData()
+    {
+        string fullPath = GetPath();
+
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+            Debug.Log("Journal save file deleted.");
+        }
+        else
+        {
+            Debug.Log("No save file to delete.");
+        }
+    }
 }

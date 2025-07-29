@@ -88,6 +88,10 @@ public class DialogueManager : MonoBehaviour
         isDialoguePlaying = false;
         dialoguePanel.SetActive(false);
     }
+    public bool IsFinished()
+    {
+        return !isDialoguePlaying;
+    }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float start, float end, float duration)
     {
